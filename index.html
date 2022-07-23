@@ -7,16 +7,26 @@
     </head>
     <body>
         <div class="alert-box" id="alert">알림창임
-            <button onclick="closeArlet()">닫기</button>
+            <button onclick="Arlet('none');">닫기</button>
         </div>
-        <button onclick="openArlet()">버튼</button>
-        <script>
-            function openArlet() {
-                document.getElementById('alert').style.display = 'block'
-            }
-            function closeArlet() {
-                document.getElementById('alert').style.display = 'none'
+        <button onclick="Arlet('block');">버튼</button>
+        
+
+        <div class="box" id="btn1">아이디를 입력하세요
+            <button onclick="Arlet('btn1','none');">닫기</button>
+        </div>
+        <div class="box" id="btn2">비밀번호를 입력하세요
+            <button onclick="Arlet('btn2','none');">닫기</button>
+        </div>
+        <button onclick="Arlet('btn1','block');">버튼1</button>
+        <button onclick="Arlet('btn2','block');">버튼2</button>
+
+
+    <script>
+            function Arlet(x,y) {
+                document.getElementById(x).style.display = y;
             }
         </script>
+
     </body>
 </html>
