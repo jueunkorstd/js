@@ -8,30 +8,32 @@
     <body>
 
         <div class="alert-box" id="alert">
-            <p id="title">알림창임</p>
-            <button onclick="알림창닫기();">닫기</button>
+            <p id="title" class="title1">알림창임</p>
+            <button id="close">닫기</button>
         </div>
 
-        <button onclick="alert('id');">버튼1</button>
-        <button onclick="alert('pw');">버튼2</button>
+        <button onclick="idAlert();">버튼1</button>
+        <button onclick="passwordAlert();">버튼2</button>
 
         <script>
 
-            function alert('id'){
-                document.getElementById('title').innerHTML ='아이디를 입력하세요';
+            document.getElementById('close').addEventListener('click', function(){
+                document.getElementById('alert').style.display = 'none';
+            });
+
+            function idAlert(){
+                document.getElementsByClassName('title1')[0].innerHTML ='아이디를 입력하세요';
                 document.getElementById('alert').style.display = 'block';
 
             }
 
-            function alert('pw'){
-                document.getElementById('title').innerHTML ='비밀번호를 입력하세요';
+            function passwordAlert(){
+                document.getElementsByClassName('title1')[0].innerHTML ='비밀번호를 입력하세요';
                 document.getElementById('alert').style.display = 'block';
 
             }
             
-            function 알림창닫기(){
-                document.getElementById('alert').style.display = 'none';
-            }
+
         </script>
 
 
