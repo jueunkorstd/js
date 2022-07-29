@@ -6,27 +6,34 @@
         <link rel="stylesheet" href="main.css">
     </head>
     <body>
-        <div class="alert-box" id="alert">알림창임
-            <button onclick="Arlet('none');">닫기</button>
-        </div>
-        <button onclick="Arlet('block');">버튼</button>
-        
 
-        <div class="box" id="btn1">아이디를 입력하세요
-            <button onclick="Arlet('btn1','none');">닫기</button>
+        <div class="alert-box" id="alert">
+            <p id="title">알림창임</p>
+            <button onclick="알림창닫기();">닫기</button>
         </div>
-        <div class="box" id="btn2">비밀번호를 입력하세요
-            <button onclick="Arlet('btn2','none');">닫기</button>
-        </div>
-        <button onclick="Arlet('btn1','block');">버튼1</button>
-        <button onclick="Arlet('btn2','block');">버튼2</button>
 
+        <button onclick="alert('id');">버튼1</button>
+        <button onclick="alert('pw');">버튼2</button>
 
-    <script>
-            function Arlet(x,y) {
-                document.getElementById(x).style.display = y;
+        <script>
+
+            function alert('id'){
+                document.getElementById('title').innerHTML ='아이디를 입력하세요';
+                document.getElementById('alert').style.display = 'block';
+
+            }
+
+            function alert('pw'){
+                document.getElementById('title').innerHTML ='비밀번호를 입력하세요';
+                document.getElementById('alert').style.display = 'block';
+
+            }
+            
+            function 알림창닫기(){
+                document.getElementById('alert').style.display = 'none';
             }
         </script>
+
 
     </body>
 </html>
