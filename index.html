@@ -13,6 +13,11 @@
   </head>
   <body>
 
+    <div class="day-bg">
+      <span class="badge bg-dark" id="badge">Dark 🔄</span>
+    </div>
+    
+
     <button id="login">로그인</button>
 
     <div class="black-bg">
@@ -28,7 +33,6 @@
            </div>
            <button type="submit" class="btn btn-primary" id="send">전송</button>
            <button type="button" class="btn btn-danger" id="close">닫기</button>
-           <button class="btn btn-danger" id="close">닫기</button>
         </form> 
 
       </div>
@@ -38,6 +42,26 @@
       <h4>Shirts on Sale</h4>
       <button id="login" class="btn btn-danger">로그인</button>
     </div>
+
+    <script> 
+
+      var count = 0;
+
+      $('.badge').on('click', function(){
+        count++;
+
+        if (count % 2 == 1) {
+        $('.badge').html('Light 🔄')
+        document.querySelector('.day-bg').classList.add('dark')
+      } else {
+        $('.badge').html('Dark 🔄')
+        document.querySelector('.day-bg').classList.remove('dark')
+      }
+
+      });
+
+      
+    </script>
     
     <script>
 

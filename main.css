@@ -24,3 +24,15 @@
   background-color: lightgray;
 
 }
+
+.day-bg {
+  width: 100px;
+  height: 100px;
+  background-color: aliceblue;
+  color: black;
+}
+
+.dark {
+  background-color: black;
+  color: aliceblue;
+}
