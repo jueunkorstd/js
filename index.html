@@ -24,7 +24,7 @@
             <input type="text" class="form-control" id="email">
            </div>
            <div class="my-3">
-             <input type="password" class="form-control">
+             <input type="password" class="form-control" id="password">
            </div>
            <button type="submit" class="btn btn-primary" id="send">전송</button>
            <button type="button" class="btn btn-danger" id="close">닫기</button>
@@ -41,12 +41,23 @@
     
     <script>
 
-      $('form').on('submit', function name(params) {
+      $('form').on('submit', function (e) {
         if (document.getElementById('email').value == '') {
           alert('아이디 입력 안 함')
+          e.preventDefault();
+        } else if (document.getElementById('email').value.length < 6) {
+          alert('아이디 짧아요')
+          e.preventDefault();
+        }
+        if (document.getElementById('password').value == '') {
+          alert('비번 입력 안 함')
+          e.preventDefault();
+        } else if (document.getElementById('password').value.length < 6) {
+          alert('비번 짧아요')
+          e.preventDefault();
         }
       });
-      
+   
     </script>
 
     <script>
