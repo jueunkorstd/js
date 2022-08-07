@@ -6,12 +6,16 @@
     <title>Bootstrap demo</title>
     <link rel="stylesheet" href="main.css">
     <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous">
-    </script>
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous">
+  </script>
   </head>
   <body>
+
+    <div class="alert alert-danger">
+      <span id="num">5</span> 초 이내 구매 시 사은품 증정!
+    </div>
 
     <div class="day-bg">
       <span class="badge bg-dark" id="badge">Dark 🔄</span>
@@ -43,25 +47,20 @@
       <button id="login" class="btn btn-danger">로그인</button>
     </div>
 
-    <script> 
+    <script>
 
-      var count = 0;
+      var count = 5;
 
-      $('.badge').on('click', function(){
-        count++;
+      setInterval(function(){
+        count -= 1;
+        if(count >= 0) {
+          document.querySelector('#num').innerHTML = count;
+        }
+      }, 1000);
 
-        if (count % 2 == 1) {
-        $('.badge').html('Light 🔄')
-        document.querySelector('.day-bg').classList.add('dark')
-      } else {
-        $('.badge').html('Dark 🔄')
-        document.querySelector('.day-bg').classList.remove('dark')
-      }
-
-      });
-
-      
     </script>
+
+   
     
     <script>
 
