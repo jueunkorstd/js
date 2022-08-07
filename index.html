@@ -60,24 +60,57 @@
 
     </script>
 
-   
+    <script> 
+
+      var count = 0;
+
+      $('.badge').on('click', function(){
+        count++;
+
+        if (count % 2 == 1) {
+        $('.badge').html('Light 🔄')
+        document.querySelector('.day-bg').classList.add('dark')
+      } else {
+        $('.badge').html('Dark 🔄')
+        document.querySelector('.day-bg').classList.remove('dark')
+      }
+
+      });
+
+      
+    </script>
     
     <script>
 
       $('form').on('submit', function (e) {
-        if (document.getElementById('email').value == '') {
+
+        var idValue = document.getElementById('email').value;
+
+        if (idValue == '') {
           alert('아이디 입력 안 함')
           e.preventDefault();
-        } else if (document.getElementById('email').value.length < 6) {
-          alert('아이디 짧아요')
+        } else if (idValue.length < 6) {
+          alert('아이디 짧아요');
           e.preventDefault();
         }
-        if (document.getElementById('password').value == '') {
-          alert('비번 입력 안 함')
+
+        if (/\S+@\S+\.\S=/.test(idValue)) {
+          alert('이메일 형식 아님');
           e.preventDefault();
-        } else if (document.getElementById('password').value.length < 6) {
-          alert('비번 짧아요')
+        }
+
+        var passwordValue = document.getElementById('password').value;
+
+        if (passwordValue == '') {
+          alert('비번 입력 안 함');
           e.preventDefault();
+        } else if (passwordValue.length < 6) {
+          alert('비번 짧아요');
+          e.preventDefault();
+        }
+
+        if (/[A-Z]/.test(passwordValue) == false) {
+          alert('비번 형식 아님');
         }
       });
    
