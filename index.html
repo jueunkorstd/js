@@ -26,125 +26,26 @@
         </div>
       </div>
     </div>
-    <br>
+
     <button class="slide-1">1</button>
-    <button class="slide-2">1</button>
-    <button class="slide-3">1</button>
-
-    <div class="alert alert-danger">
-      <span id="num">5</span> 초 이내 구매 시 사은품 증정!
-    </div>
-
-    <div class="day-bg">
-      <span class="badge bg-dark" id="badge">Dark 🔄</span>
-    </div>
-    
-
-    <button id="login">로그인</button>
-
-    <div class="black-bg">
-      <div class="white-bg">
-        <h4>로그인 하세요</h4>
-
-        <form action="success.html">
-          <div class="my-3">
-            <input type="text" class="form-control" id="email">
-           </div>
-           <div class="my-3">
-             <input type="password" class="form-control" id="password">
-           </div>
-           <button type="submit" class="btn btn-primary" id="send">전송</button>
-           <button type="button" class="btn btn-danger" id="close">닫기</button>
-        </form> 
-
-      </div>
-    </div>
-
-    <div class="main-bg">
-      <h4>Shirts on Sale</h4>
-      <button id="login" class="btn btn-danger">로그인</button>
-    </div>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
 
     <script>
-
-      var count = 5;
-
-      setInterval(function(){
-        count -= 1;
-        if(count >= 0) {
-          document.querySelector('#num').innerHTML = count;
-        }
-      }, 1000);
-
-    </script>
-
-    <script> 
-
-      var count = 0;
-
-      $('.badge').on('click', function(){
-        count++;
-
-        if (count % 2 == 1) {
-        $('.badge').html('Light 🔄')
-        document.querySelector('.day-bg').classList.add('dark')
-      } else {
-        $('.badge').html('Dark 🔄')
-        document.querySelector('.day-bg').classList.remove('dark')
-      }
-
+      $('.slide-1').on('click', function(){
+        $('.slider-container').css('transform', 'translateX(0)');
       });
-
-      
     </script>
-    
     <script>
-
-      $('form').on('submit', function (e) {
-
-        var idValue = document.getElementById('email').value;
-
-        if (idValue == '') {
-          alert('아이디 입력 안 함')
-          e.preventDefault();
-        } else if (idValue.length < 6) {
-          alert('아이디 짧아요');
-          e.preventDefault();
-        }
-
-        if (/\S+@\S+\.\S=/.test(idValue)) {
-          alert('이메일 형식 아님');
-          e.preventDefault();
-        }
-
-        var passwordValue = document.getElementById('password').value;
-
-        if (passwordValue == '') {
-          alert('비번 입력 안 함');
-          e.preventDefault();
-        } else if (passwordValue.length < 6) {
-          alert('비번 짧아요');
-          e.preventDefault();
-        }
-
-        if (/[A-Z]/.test(passwordValue) == false) {
-          alert('비번 형식 아님');
-        }
+      $('.slide-2').on('click', function(){
+        $('.slider-container').css('transform', 'translateX(-100vw)');
       });
-   
     </script>
-
     <script>
-      document.getElementById('login').addEventListener('click', function(){
-        document.querySelector('.black-bg').classList.add('show-modal')
-      })
-
-      document.getElementById('close').addEventListener('click', function (){
-        document.querySelector('.black-bg').classList.remove('show-modal')
-      })
+      $('.slide-3').on('click', function(){
+        $('.slider-container').css('transform', 'translateX(-200vw)');
+      });
     </script>
-
-
   </body>
   
 </html>
