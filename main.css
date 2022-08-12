@@ -12,3 +12,17 @@
   width: 100%;
 }
 
+.navbar {
+  width: 100vw;
+  height: 50px;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  box-shadow: 0px 0px 10px #000;
+}
+
+.navbar-brand {
+  font-size: 25px;
+}
